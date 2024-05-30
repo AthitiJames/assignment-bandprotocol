@@ -6,7 +6,7 @@
  * @return max of Superman's Chicken Rescue
  */
 
-export function findChickenRescue(
+export default function findChickenRescue(
   n: number,
   k: number,
   chickens: number[]

@@ -80,7 +80,7 @@ export async function checkTransactionStatus(txHash: string) {
  * @param price
  * @param timestamp
  */
-export async function monitorTransaction(
+export default async function monitorTransaction(
   symbol: string,
   price: number,
   timestamp: number

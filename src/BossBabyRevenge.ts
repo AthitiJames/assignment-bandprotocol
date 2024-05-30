@@ -4,7 +4,7 @@
  * @return Good boy or Bad boy
  */
 
-export function checkBossBaby(data: string): string {
+export default function checkBossBaby(data: string): string {
   // trim whitespace and set to uppercase and split any word
   const shots: string[] = data.trim().toUpperCase().split("");
 

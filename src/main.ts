@@ -1,10 +1,9 @@
-import { checkBossBaby } from "./BossBabyRevenge";
-import {
-  monitorTransaction,
+import checkBossBaby from "./BossBabyRevenge";
+import monitorTransaction, {
   broadcastTransaction,
   checkTransactionStatus,
 } from "./TransactionBroadcastingAndMonitoringClient";
-import { findChickenRescue } from "./SupermanIsChickenRescue";
+import findChickenRescue from "./SupermanIsChickenRescue";
 
 async function main() {
   console.log("Problem 1: Boss Baby's Revenge");
