@@ -1,15 +1,15 @@
 /**
  *
- * @param data
+ * @param data type string
  * @return Good boy or Bad boy
  */
 
-export default function checkBossBaby(data: string): string {
+export function checkBossBaby(data: string): string {
   // trim whitespace and set to uppercase and split any word
   const shots: string[] = data.trim().toUpperCase().split("");
 
   // check if there are shot ​​other than R and S.
-  if (shots.findIndex((shot: string) => shot !== "R" && shot !== "S")) {
+  if (shots.findIndex((shot: string) => shot !== "R" && shot !== "S") !== -1) {
     // throw error
     throw new Error(
       'All shot must be either "R" or "S". Please provide valid input.'
@@ -40,4 +40,18 @@ export default function checkBossBaby(data: string): string {
 
   // return Good boy if kidShots is 0 but if not, will return Bad boy
   return kidShots === 0 ? "Good boy" : "Bad boy";
+}
+
+console.log("Problem 1: Boss Baby's Revenge");
+console.log(checkBossBaby("SRSSRRR"));
+console.log(checkBossBaby("RSSRR"));
+console.log(checkBossBaby("SSSRRRRS"));
+console.log(checkBossBaby("SRRSSR"));
+console.log(checkBossBaby("SSRSRRR"));
+console.log(checkBossBaby("sSRsRrR"));
+console.log(checkBossBaby("   sSRsRrR   "));
+try {
+  console.log(checkBossBaby(" rS12SS "));
+} catch (err) {
+  console.error(err);
 }

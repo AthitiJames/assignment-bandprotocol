@@ -1,12 +1,12 @@
 /**
  *
- * @param n
- * @param k
- * @param chickens
+ * @param n type number
+ * @param k type number
+ * @param chickens type array
  * @return max of Superman's Chicken Rescue
  */
 
-export default function findChickenRescue(
+export function findChickenRescue(
   n: number,
   k: number,
   chickens: number[]
@@ -38,10 +38,10 @@ export default function findChickenRescue(
     // construct chickenCount for count checket at Superman's Chicken Rescue
     let chickenCount = 1;
 
-    // loop all index after current index and check the current chicken position minus the next chicken position is greater than or equal to k?
+    // loop all index after current index and check the current chicken position plus k minus 1 is greater than or equal the next chicken position?
     for (
       let index = i + 1;
-      index < n && chickens[index] - chickens[i] <= k;
+      index < n && chickens[i] + k - 1 >= chickens[index];
       index++
     ) {
       // if yes, add chickenCount by 1.
@@ -57,4 +57,15 @@ export default function findChickenRescue(
 
   // return max Superman's Chicken Rescue
   return maxChickenProtect;
+}
+
+console.log("Problem 2: Superman's Chicken Rescue");
+console.log(findChickenRescue(5, 5, [2, 5, 10, 12, 15]));
+console.log(findChickenRescue(6, 10, [1, 11, 30, 34, 35, 37]));
+console.log(findChickenRescue(10, 5, [9, 7, 2, 6, 5, 2, 6, 5, 4, 3]));
+try {
+  const result = findChickenRescue(6, 10, [1, 11, 30, 34, 35, 1000000001]);
+  console.log(result);
+} catch (err) {
+  console.error(err);
 }
